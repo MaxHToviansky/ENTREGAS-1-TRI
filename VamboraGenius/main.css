@@ -1,0 +1,117 @@
+:root {
+    --color-a: #2ecc71;
+    --color-b: #9b59b6;
+    --color-c: #e74c3c;
+    --color-d: #e67e22;
+    --color-background: #01535C;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--color-background);
+}
+
+
+@keyframes piscadela {
+    50% {
+        background-color: white;
+    }
+}
+
+main {
+    height: 70vmin;
+    width: 70vmin;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 3;
+}
+
+main>div {
+    width: 50%;
+    flex: none;
+}
+
+main>div:nth-child(1) {
+    background-color: var(--color-a);
+    border-top-left-radius: 50%;
+}
+
+main>div:nth-child(2) {
+    background-color: var(--color-b);
+    border-top-right-radius: 50%;
+}
+
+main>div:nth-child(3) {
+    background-color: var(--color-c);
+    border-bottom-left-radius: 50%;
+}
+
+main>div:nth-child(4) {
+    background-color: var(--color-d);
+    border-bottom-right-radius: 50%;
+}
+
+main>div.animate {
+    /* background-color: white; */
+    /* usado no exemplo transition */
+    animation: piscadela .3s ease-in-out;
+    /* animation-name: piscadela;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out; */
+}
+
+div.pontuacao, div.contadora{
+    width: 10vmin;
+    height: 10vmin;
+    background-color: white;
+    font-size: 5vmin;
+    text-align: center;
+    line-height: 10vmin;
+    font-family: copperplate, fantasy;
+    margin: auto;
+}
+div.dadosjogo{
+    width: 20vmin;
+    height: 37.5vmin;
+    background-color: #547275;
+    font-size: 3vmin;
+    text-align: center;
+    font-family: copperplate, fantasy;
+}
+div.pont-cont{
+    padding: 1vmin;
+}
+div.dadostexto{
+    padding: 1vmin;
+}
+#endscreen{
+    background-color: var(--color-background);
+    opacity: 0%;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+}
+#endtext{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60vmin;
+    transform: translate(-50%,-50%);
+    font-size: 5vmin;
+    font-family: copperplate, fantasy;
+    color: white;
+    z-index: 2;
+}
+
